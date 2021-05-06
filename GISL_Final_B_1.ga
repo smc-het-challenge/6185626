@@ -1,0 +1,167 @@
+{
+    "a_galaxy_workflow": "true", 
+    "format-version": "0.1", 
+    "name": "GISL_Final_B_1", 
+    "steps": {
+        "1": {
+            "tool_id": null, 
+            "content_id": null, 
+            "uuid": "0b6a2616-5023-45c6-b5c1-459f758c4640", 
+            "tool_version": null, 
+            "outputs": [], 
+            "workflow_outputs": [], 
+            "annotation": "", 
+            "input_connections": {}, 
+            "inputs": [
+                {
+                    "description": "", 
+                    "name": "CNA_INPUT"
+                }
+            ], 
+            "tool_errors": null, 
+            "position": {
+                "top": 511, 
+                "left": 315
+            }, 
+            "tool_state": "{\"name\": \"CNA_INPUT\"}", 
+            "label": null, 
+            "type": "data_input", 
+            "id": 1, 
+            "name": "Input dataset"
+        }, 
+        "0": {
+            "tool_id": null, 
+            "content_id": null, 
+            "uuid": "b00165ae-1cb2-482c-95bf-9d419ddd450b", 
+            "tool_version": null, 
+            "outputs": [], 
+            "workflow_outputs": [], 
+            "annotation": "", 
+            "input_connections": {}, 
+            "inputs": [
+                {
+                    "description": "", 
+                    "name": "VCF_INPUT"
+                }
+            ], 
+            "tool_errors": null, 
+            "position": {
+                "top": 388, 
+                "left": 308
+            }, 
+            "tool_state": "{\"name\": \"VCF_INPUT\"}", 
+            "label": null, 
+            "type": "data_input", 
+            "id": 0, 
+            "name": "Input dataset"
+        }, 
+        "3": {
+            "tool_id": "smc_het_eval", 
+            "content_id": "smc_het_eval", 
+            "uuid": "9101cd0c-9c0a-4b28-b68b-ce828a34efbc", 
+            "tool_version": "0.1.0", 
+            "outputs": [
+                {
+                    "type": "txt", 
+                    "name": "outfile"
+                }
+            ], 
+            "post_job_actions": {}, 
+            "workflow_outputs": [
+                {
+                    "output_name": "outfile", 
+                    "uuid": "27aad6cc-6f4b-4a48-9da3-3941abe73535", 
+                    "label": null
+                }
+            ], 
+            "annotation": "", 
+            "input_connections": {
+                "proportion|predfile": {
+                    "output_name": "1C", 
+                    "id": 2
+                }, 
+                "cellularity|predfile": {
+                    "output_name": "1A", 
+                    "id": 2
+                }, 
+                "population|predfile": {
+                    "output_name": "1B", 
+                    "id": 2
+                }
+            }, 
+            "inputs": [], 
+            "tool_errors": null, 
+            "position": {
+                "top": 458, 
+                "left": 851.5
+            }, 
+            "tool_state": "{\"cocluster_assignment\": \"{\\\"submit\\\": \\\"no\\\", \\\"__current_case__\\\": 1}\", \"__page__\": 0, \"approx\": \"{\\\"enable\\\": \\\"no\\\", \\\"__current_case__\\\": 1}\", \"__rerun_remap_job_id__\": null, \"proportion\": \"{\\\"predfile\\\": null, \\\"submit\\\": \\\"yes\\\", \\\"__current_case__\\\": 0}\", \"sample\": \"\\\"/opt/galaxy/data/Tumour1/Tumour1\\\"\", \"cellularity\": \"{\\\"predfile\\\": null, \\\"submit\\\": \\\"yes\\\", \\\"__current_case__\\\": 0}\", \"cluster_assignment\": \"{\\\"submit\\\": \\\"no\\\", \\\"__current_case__\\\": 1}\", \"population\": \"{\\\"predfile\\\": null, \\\"submit\\\": \\\"yes\\\", \\\"__current_case__\\\": 0}\"}", 
+            "label": null, 
+            "type": "tool", 
+            "id": 3, 
+            "name": "SMC-Het Evaluator"
+        }, 
+        "2": {
+            "tool_id": "GISL_Final_b_SC1_tool", 
+            "content_id": "GISL_Final_b_SC1_tool", 
+            "uuid": "9f913744-ecc7-4453-ad58-f8ed6310a45e", 
+            "tool_version": "0.1.0", 
+            "outputs": [
+                {
+                    "type": "txt", 
+                    "name": "1A"
+                }, 
+                {
+                    "type": "txt", 
+                    "name": "1B"
+                }, 
+                {
+                    "type": "txt", 
+                    "name": "1C"
+                }
+            ], 
+            "post_job_actions": {}, 
+            "workflow_outputs": [
+                {
+                    "output_name": "1A", 
+                    "uuid": "234b4855-5110-480a-80a6-553c57e20cae", 
+                    "label": null
+                }, 
+                {
+                    "output_name": "1C", 
+                    "uuid": "bdb870d6-cefb-4d29-9dc6-ab1edb4abaf1", 
+                    "label": null
+                }, 
+                {
+                    "output_name": "1B", 
+                    "uuid": "117e0ea2-a205-44a0-8cda-caeb6b898b5d", 
+                    "label": null
+                }
+            ], 
+            "annotation": "", 
+            "input_connections": {
+                "input_vcf": {
+                    "output_name": "output", 
+                    "id": 0
+                }, 
+                "input_battenberg": {
+                    "output_name": "output", 
+                    "id": 1
+                }
+            }, 
+            "inputs": [], 
+            "tool_errors": null, 
+            "position": {
+                "top": 407, 
+                "left": 560
+            }, 
+            "tool_state": "{\"__page__\": 0, \"__rerun_remap_job_id__\": null, \"input_vcf\": \"null\", \"input_battenberg\": \"null\"}", 
+            "label": null, 
+            "type": "tool", 
+            "id": 2, 
+            "name": "GISL_Final_b_SC1"
+        }
+    }, 
+    "annotation": "Method B for SC1", 
+    "uuid": "4c89f428-d7d9-42c7-a2a0-79776808eab5"
+}
